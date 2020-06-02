@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { SListPageModule } from './slist/slist.module';
 
 const routes: Routes = [
   {
@@ -14,7 +15,16 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  }
+  },
+  {
+    path: 'slist',
+    loadChildren: () => import('./slist/slist.module').then( m => m.SListPageModule)
+  },
+  {
+    path: 'saidm',
+    loadChildren: () => import('./saidm/saidm.module').then( m => m.SaidmPageModule)
+  },
+  
 ];
 
 @NgModule({

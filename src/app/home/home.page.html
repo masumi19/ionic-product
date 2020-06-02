@@ -4,45 +4,131 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      {{title}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card class="welcome-card">
-    <img src="/assets/shapes.svg" alt=""/>
-    <ion-card-header>
-      <ion-card-subtitle>Get Started</ion-card-subtitle>
-      <ion-card-title>Welcome to Ionic</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>
-        Now that your app has been created, you'll want to start building out features
-        and components. Check out some of the resources below for next steps.
-      </p>
-    </ion-card-content>
-  </ion-card>
+<ion-content class="ion-padding">
+  <ion-item>
+   <ion-datetime displayFormat="YYYY年MM月DD日"
+     doneText="OK"
+     cancelText="キャンセル"
+     placeholder="日付を選択"
+     [(ngModel)]="item.startDateInput" name="startDateInput">
+   </ion-datetime>
+ </ion-item>
+<ion-item>
+      <ion-label position="floating">
+        <ion-button color="Success">memo</ion-button>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="item.memo" name="memo"></ion-input>
+     </ion-item>
+  <form class="ion-padding" (submit)="addTask()" #f="ngForm">
+   <ion-list lines="full">
 
-  <ion-list lines="none">
-    <ion-list-header>
-      <ion-label>Resources</ion-label>
-    </ion-list-header>
-    <ion-item href="https://ionicframework.com/docs/">
-      <ion-icon slot="start" color="medium" name="book"></ion-icon>
-      <ion-label>Ionic Documentation</ion-label>
+    
+
+     <ion-item>
+    　<ion-label position="floating">身長(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.height" name="height"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">体重(kg)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.weight" name="weight"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">バスト(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.BustSize" name="BustSize"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">アンダーバスト(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.UnderBust" name="UnderBust"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">ウエスト・くびれ(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.Waist" name="Waist"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">腹囲(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.WaistCircumference" name="WaistCircumference"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">ヒップ(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.Hip" name="Hip"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">二の腕・左(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.leftUpperArm" name="leftUpperArm"
+      required minlength="1" maxlength="3"></ion-input>
     </ion-item>
-    <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-      <ion-icon slot="start" color="medium" name="build"></ion-icon>
-      <ion-label>Scaffold Out Your App</ion-label>
+    <ion-item>
+      <ion-label position="floating">二の腕・右(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.rightUpperArm" name="rightUpperArm"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">前腕・左(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.leftForearm" name="leftForearm"
+      required minlength="1" maxlength="3"></ion-input>
     </ion-item>
-    <ion-item href="https://ionicframework.com/docs/layout/structure">
-      <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-      <ion-label>Change Your App Layout</ion-label>
+    <ion-item>
+      <ion-label position="floating">前腕・右(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.rightForearm" name="rightForearm"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">太もも・左(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.leftThigh" name="leftThigh"
+      required minlength="1" maxlength="3"></ion-input>
     </ion-item>
-    <ion-item href="https://ionicframework.com/docs/theming/basics">
-      <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-      <ion-label>Theme Your App</ion-label>
+    <ion-item>
+      <ion-label position="floating">太もも・右(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.rightThigh" name="rightThigh"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">ふくらはぎ・左(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.leftCalf" name="leftleftCalf"
+      required minlength="1" maxlength="3"></ion-input>
     </ion-item>
-  </ion-list>
+    <ion-item>
+      <ion-label position="floating">ふくらはぎ・右(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.rightCalf" name="rightCalf"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">足首・左(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.leftAnkle" name="leftAnkle"
+      required minlength="1" maxlength="3"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">足首・右(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.rightAnkle" name="rightankle"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+      <ion-button expand="block" submit="submit" color="primary"(click)="saveItem()">保存</ion-button>
+
+   </ion-list>
+  </form>
+
 </ion-content>

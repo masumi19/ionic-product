@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="modalController.dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> 
+      <ion-label>{{data.startDateInput |date}}</ion-label>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-button color="Success">memo</ion-button>
+      <ion-label>{{data.memo}}</ion-label>
+    </ion-item>
+
+  <ion-item>
+    <ion-label><b>身長</b>：
+      <font color="#f39325"><b>{{data.height}}</b></font>cm</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label><b>体重</b>：
+      <font color="#f39325"><b>{{data.weight}}</b></font>cm</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <p><b>バスト</b><br />
+      <ion-label>トップ：
+      <font color="#f39325"><b>{{data.BustSize}}</b></font>cm</ion-label>
+    <ion-label>アンダー：
+      <font color="#f39325"><b>{{data.UnderBust}}</b></font>cm</ion-label>
+    </p>
+  </ion-item>
+
+  <ion-item>
+    <p><b>ウエスト</b><br /> 
+    <ion-label>くびれ：
+      <font color="#f39325"><b>{{data.Waist}}</b></font>cm</ion-label>
+    <ion-label>腹囲：
+      <font color="#f39325"><b>{{data.WaistCircumference}}</b></font>cm</ion-label>
+    </p>
+  </ion-item>
+
+  <ion-item>
+    <ion-label><b>ヒップ</b>：
+     <font color="#f39325"><b>{{data.Hip}}</b></font>cm</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <p><b>二の腕</b><br />
+    <ion-label>左：
+      <font color="#f39325"><b>{{data.leftUpperArm}}</b></font>cm</ion-label>
+    <ion-label>右：
+      <font color="#f39325"><b>{{data.rightUpperArm}}</b></font>cm</ion-label>
+    </p>
+  </ion-item>
+
+<ion-item>
+  <p><b>前腕</b><br />
+    <ion-label>左：
+      <font color="#f39325"><b>{{data.leftForearm}}</b></font>cm</ion-label>
+    <ion-label>右：
+      <font color="#f39325"><b>{{data.rightForearm}}</b></font>cm</ion-label>
+    </p>
+  </ion-item>
+
+  <ion-item>
+    <p><b>太もも</b><br />
+    <ion-label>左：
+      <font color="#f39325"><b>{{data.leftThigh}}</b></font>cm</ion-label>
+    <ion-label>右：
+      <font color="#f39325"><b>{{data.rightThigh}}</b></font>cm</ion-label>
+    </p>
+  </ion-item>
+
+  <ion-item><p><b>ふくらはぎ</b><br />
+    <ion-label>左：
+    <font color="#f39325"><b>{{data.leftCalf}}</b></font>cm</ion-label>
+    <ion-label>右：
+    <font color="#f39325"><b>{{data.rightCalf}}</b></font>cm</ion-label>
+  </p>
+  </ion-item>
+
+  <ion-item><p><b>足首</b><br />
+   <ion-label>左：
+    <font color="#f39325"><b>{{data.leftAnkle}}</b></font>cm</ion-label>
+    <ion-label>右：
+      <font color="#f39325"><b>{{data.rightAnkle}}</b></font>cm</ion-label>
+  </p></ion-item>
+
+
+  </ion-list>
+</ion-content> 
