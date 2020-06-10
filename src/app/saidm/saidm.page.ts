@@ -5,11 +5,24 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './saidm.page.html',
   styleUrls: ['./saidm.page.scss'],
 })
-export class SaidmPage implements OnInit {
 
-  constructor() { }
+export class SaidmPage {
+  title = '理想体型リスト';
+  list: { name: string} [] = [];
+  height3 = null;
+  old1 = null;
+  BodyTemperature1 = null;
+  task: string;
 
-  ngOnInit() {
+  
+  constructor(){}
+    
+    addTask(){
+      this.list.push({
+        name: this.task
+      });
+      localStorage.list = JSON.stringify(this.list);
+      this.task = '';
+    }
   }
 
-}

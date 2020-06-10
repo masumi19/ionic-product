@@ -17,17 +17,20 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: '一覧',
+      title: '保存一覧',
       url: '/slist',
       icon: 'list'
     },
     {
-      title: '理想体型',
+      title: '理想体型（女性）',
       url: '/list',
       icon: 'list'
     },
-
-
+    {
+      title: '理想体型（男性）',
+      url: '/saidm',
+      icon: 'list'
+    },
   ];
 
   constructor(

@@ -42,7 +42,13 @@
      </ion-item>
 
      <ion-item>
-      <ion-label position="floating">バスト(cm)</ion-label>
+      <ion-label position="floating">体脂肪率(％)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.BodyFatPercentage" name="BodyFatPercentage"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">バスト・胸囲(cm)</ion-label>
       <ion-input type="text" [(ngModel)]="item.BustSize" name="BustSize"
       required minlength="1" maxlength="3"></ion-input>
      </ion-item>
@@ -54,7 +60,7 @@
      </ion-item>
 
      <ion-item>
-      <ion-label position="floating">ウエスト・くびれ(cm)</ion-label>
+      <ion-label position="floating">ウエスト・くびれ部分(cm)</ion-label>
       <ion-input type="text" [(ngModel)]="item.Waist" name="Waist"
       required minlength="1" maxlength="3"></ion-input>
      </ion-item>
@@ -125,8 +131,18 @@
       <ion-input type="text" [(ngModel)]="item.rightAnkle" name="rightankle"
       required minlength="1" maxlength="3"></ion-input>
      </ion-item>
+     <ion-item>
+      <ion-label position="floating">股下(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.LengthOfTheLeg" name="LengthOfTheLeg"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
+     <ion-item>
+      <ion-label position="floating">ヒップ高(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="item.CroupHeight" name="CroupHeight"
+      required minlength="1" maxlength="3"></ion-input>
+     </ion-item>
 
-      <ion-button expand="block" submit="submit" color="primary"(click)="saveItem()">保存</ion-button>
+      <ion-button expand="block" type="submit" color="primary"(click)="saveItem()">保存</ion-button>
 
    </ion-list>
   </form>

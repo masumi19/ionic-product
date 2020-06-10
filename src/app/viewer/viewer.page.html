@@ -14,7 +14,8 @@
 <ion-content>
   <ion-list>
     <ion-item>
-      <ion-button color="Success">memo</ion-button>
+      <button type="button"  style="border:1px solid #debec0; background-color:#F4DEEE;"><font color="#663333"><b>memo</b></font>
+      </button>
       <ion-label>{{data.memo}}</ion-label>
     </ion-item>
 
@@ -29,8 +30,14 @@
   </ion-item>
 
   <ion-item>
+    <ion-label><b>体脂肪率</b>：
+      <font color="#f39325"><b>{{data.BodyFatPercentage}}</b></font>％</ion-label>
+  </ion-item>
+  
+
+  <ion-item>
     <p><b>バスト</b><br />
-      <ion-label>トップ：
+      <ion-label>トップ・胸囲：
       <font color="#f39325"><b>{{data.BustSize}}</b></font>cm</ion-label>
     <ion-label>アンダー：
       <font color="#f39325"><b>{{data.UnderBust}}</b></font>cm</ion-label>
@@ -93,6 +100,15 @@
       <font color="#f39325"><b>{{data.rightAnkle}}</b></font>cm</ion-label>
   </p></ion-item>
 
+  <ion-item><b>股下</b>：
+    <ion-label>
+     <font color="#f39325"><b>{{data.LengthOfTheLeg}}</b></font>cm</ion-label>
+  </ion-item>
+
+  <ion-item><b>ヒップ高</b>：
+    <ion-label>
+     <font color="#f39325"><b>{{data.CroupHeight}}</b></font>cm</ion-label>
+  </ion-item>
 
   </ion-list>
 </ion-content> 

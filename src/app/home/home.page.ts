@@ -17,6 +17,7 @@ export class HomePage{
     startDateInput: string;
     height: number;
     weight: number;
+    BodyFatPercentage: number;
     BustSize: number;
     UnderBust: number;
     Waist: number;
@@ -32,11 +33,14 @@ export class HomePage{
     rightCalf:number;
     leftAnkle:number;
     rightAnkle:number;
+    LengthOfTheLeg:number;
+    CroupHeight:number;
     memo:number;
   } = {
     startDateInput: null,
     height: null,
     weight:null,
+    BodyFatPercentage:null,
     BustSize: null,
     UnderBust: null,
     Waist: null,
@@ -52,6 +56,8 @@ export class HomePage{
     rightCalf:null,
     leftAnkle:null,
     rightAnkle:null,
+    LengthOfTheLeg:null,
+    CroupHeight:null,
     memo:null,
   }
 
@@ -59,6 +65,7 @@ export class HomePage{
     startDateInput: string;
     height: number;
     weight: number;
+    BodyFatPercentage: number;
     BustSize: number;
     UnderBust: number;
     Waist: number;
@@ -74,6 +81,8 @@ export class HomePage{
     rightCalf:number;
     leftAnkle:number;
     rightAnkle:number;
+    LengthOfTheLeg:number;
+    CroupHeight:number;
     memo:number;
   }[] = [];
   

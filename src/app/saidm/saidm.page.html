@@ -1,9 +1,203 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>saidm</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>理想体型リスト(男性)</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form class="ion-padding" (submit)="addTask()" #f="ngForm">
+
+    <ion-item>
+      <ion-label stacked>あなたの身長(cm)</ion-label>
+      <ion-input type="number" [(ngModel)]="height3" name="height">
+    </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>あなたの年齢(歳)</ion-label>
+      <ion-input type="number" [(ngModel)]="old1" name="old">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>体温(℃)</ion-label>
+      <ion-input type="number" [(ngModel)]="BodyTemperature1" name="BodyTemperature">
+      </ion-input>
+　　</ion-item>
+
+　　　　<font color="#f39325">
+  　　　<p><b>※身長を入力して下さい。<br />
+        ※基礎代謝量を知りたい方は年齢、<br />
+        水分蒸発量を知りたい方は体温も入力して下さい。</b></p>
+      </font>
+　　</form>
+　　
+　<ion-item>
+  　<b>水</b>
+　</ion-item>
+　<ion-item>
+  　<ion-label>１日に必要な水分量</ion-label>
+  　<ion-input position="floating" type="text"  name="Moisture"></ion-input>
+  　<ion-label>{{(height3*height3*20/10000)*40 | number:'1.0-0'}}ml</ion-label>
+　</ion-item>
+　<ion-item>
+  　<ion-label>１日の水分蒸発量</ion-label>
+  　<ion-input position="floating" type="text"  name="Moisture"></ion-input>
+  　<ion-label>{{(height3*height3*20/10000)*15+200*(BodyTemperature1-36.8) | number:'1.0-0'}}ml</ion-label>
+　</ion-item>
+
+　<ion-item>
+  　<b>体重</b>
+　</ion-item>
+　<ion-item>
+    <ion-label >・標準</ion-label>
+    <ion-input position="floating" type="text"  name="weight" ></ion-input>
+    <ion-label>{{height3*height3*22/10000 | number:'1.0-0'}}kg</ion-label>
+　</ion-item>
+　<ion-item>
+　<ion-label>・細マッチョ</ion-label>
+  　<ion-input position="floating" type="text" name="weight2"></ion-input>
+ 　　<ion-label>{{height3*height3*21.5/10000 | number:'1.0-0'}}kg</ion-label>
+  </ion-item>
+　  <ion-item>
+      <ion-label>・マッチョ</ion-label>
+     <ion-input position="floating" type="text"  name="weight3"></ion-input>
+     <ion-label>{{height3*height3*23.65/10000 | number:'1.0-0'}}kg</ion-label>
+  </ion-item>
+
+  <button type="button" style="border:3px double #666666; background-color:#ECE3D3;"><font color="#333333"><b>細マッチョ</b></font>
+  </button>
+
+  <ion-item>
+    　<ion-label>体脂肪量</ion-label>
+    　 <ion-input position="floating" type="text" name="BodyFatMass2"></ion-input>
+      <ion-label>{{height3*height3*21.5/10000*0.11 | number:'1.0-0'}}kg</ion-label>
+    </ion-item>
+    <ion-item>
+      　<ion-label>体脂肪率</ion-label>11％
+    </ion-item>
+    <ion-item>
+      　<ion-label>筋肉量</ion-label>
+        <ion-input position="floating" type="text" name="MuscleMass2"></ion-input>
+      　<ion-label>{{height3*height3*21.5/10000*0.38 | number:'1.0-0'}}kg</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>基礎代謝</ion-label>
+      <ion-input position="floating" type="text" name="BasalMetabolism2"></ion-input>
+      <ion-label>{{height3*height3*21.5/10000*0.23 | number:'1.0-0'}}kg</ion-label>
+    </ion-item>
+    <ion-item>
+      　<ion-label>基礎代謝量</ion-label>
+      　 <ion-input position="floating" type="text" name="Metabolism1"></ion-input>
+    　  <ion-label>{{(13.307*height3*height3*21.5/10000)+(4.799*height3)-(5.677*old1)+88.362 | number:'1.0-0'}}kcal</ion-label>
+    　</ion-item>
+    <ion-item>
+        <ion-label>胸囲</ion-label>
+         <ion-input position="floating" type="text" name="ChestMeasurement2"></ion-input>
+        <ion-label>{{height3*0.52 | number:'1.0-0'}}cm</ion-label>
+    </ion-item>
+    <ion-item>
+      　<ion-label>ウエスト</ion-label>
+         <ion-input position="floating" type="text" name="Waist2"></ion-input>
+        <ion-label>{{height3*0.41 | number:'1.0-0'}}cm</ion-label>
+    </ion-item>
+    <ion-item>
+     　 <ion-label>腹囲</ion-label>
+         <ion-input position="floating" type="text" name="WaistCircumference2"></ion-input>
+        <ion-label>{{height3*0.43 | number:'1.0-0'}}cm</ion-label>
+    </ion-item>
+    <ion-item>
+      　<ion-label>ヒップ</ion-label>
+         <ion-input position="floating" type="text" name="Hip2"></ion-input>
+        <ion-label>{{height3*0.51 | number:'1.0-0'}}cm</ion-label>
+   </ion-item>
+   <ion-item>
+       <ion-label>二の腕</ion-label>
+       <ion-input position="floating" type="text" name="UpperArm2"></ion-input>
+       <ion-label>{{height3*0.16 | number:'1.0-0'}}cm</ion-label>
+   </ion-item>
+   <ion-item>
+    　　<ion-label>太もも</ion-label>
+       <ion-input position="floating" type="text" name="Thigh2"></ion-input>
+      　<ion-label>{{height3*0.32 | number:'1.0-0'}}cm</ion-label>
+ 　 </ion-item>
+ 　　<ion-item>
+  　　　　<ion-label>ふくらはぎ</ion-label>
+     　　<ion-input position="floating" type="text" name="Calf2"></ion-input>
+   　　　 <ion-label>{{height3*0.22 | number:'1.0-0'}}cm</ion-label>
+    </ion-item>
+    <ion-item>
+      　<ion-label>股下</ion-label>
+         <ion-input position="floating" type="text" name="LengthOfTheLeg2"></ion-input>
+        <ion-label>{{height3*0.456 | number:'1.0-0'}}cm</ion-label>
+    </ion-item>
+
+    <button type="button" style="border:3px double #666666; background-color:#ECE3D3;"><font color="#333333"><b>マッチョ</b></font>
+    </button>
+    
+    <ion-item>
+      <ion-label>体脂肪量</ion-label>
+    　<ion-input position="floating" type="text"  name="BodyFatMass3"></ion-input>
+     <ion-label>{{height3*height3*23.65/10000*0.15 | number:'1.0-0'}}kg</ion-label>
+  　</ion-item>
+  　<ion-item>
+    　<ion-label>体脂肪率</ion-label>15％
+  　</ion-item>
+  　<ion-item>
+    　<ion-label>筋肉量</ion-label>
+  　 　<ion-input position="floating" type="text"  name="MuscleMass3"></ion-input>
+    　<ion-label>{{height3*height3*23.65/10000*0.418 | number:'1.0-0'}}kg</ion-label>
+  　</ion-item>
+ 　 <ion-item>
+   　 <ion-label>基礎代謝</ion-label>
+    　<ion-input position="floating" type="text"  name="BasalMetabolism3"></ion-input>
+    　<ion-label>{{height3*height3*23.65/10000*0.253 | number:'1.0-0'}}kg</ion-label>
+  　</ion-item>
+  　<ion-item>
+    　　<ion-label>基礎代謝量</ion-label>
+     　<ion-input position="floating" type="text" name="Metabolism1"></ion-input>
+  　  　<ion-label>{{(13.307*height3*height3*23.65/10000)+(4.799*height3)-(5.677*old1)+88.362 | number:'1.0-0'}}kcal</ion-label>
+  　</ion-item>
+ 　 <ion-item>
+    　<ion-label>胸囲</ion-label>
+  　　 <ion-input position="floating" type="text"  name="ChestMeasurement3"></ion-input>
+  　　 <ion-label>{{height3*0.546 | number:'1.0-0'}}cm</ion-label>
+　　</ion-item>
+　　<ion-item>
+  　　　<ion-label>ウエスト</ion-label>
+ 　　　　<ion-input position="floating" type="text"  name="Waist3"></ion-input>
+ 　　　　<ion-label>{{height3*0.431 | number:'1.0-0'}}cm</ion-label>
+　　</ion-item>
+　　<ion-item>
+  　　　<ion-label>腹囲</ion-label>
+ 　　　　<ion-input position="floating" type="text"  name="WaistCircumference3"></ion-input>
+ 　　　　<ion-label>{{height3*0.452 | number:'1.0-0'}}cm</ion-label>
+　　</ion-item>
+　　<ion-item>
+  　　　<ion-label>ヒップ</ion-label>
+ 　　　　<ion-input position="floating" type="text"  name="Hip3"></ion-input>
+ 　　　　<ion-label>{{height3*0.536 | number:'1.0-0'}}cm</ion-label>
+　　</ion-item>
+　　<ion-item>
+  　　　<ion-label>二の腕</ion-label>
+　　　　　<ion-input position="floating" type="text"  name="UpperArm3"></ion-input>
+ 　　　　<ion-label>{{height3*0.168 | number:'1.0-0'}}cm</ion-label>
+　　</ion-item>
+　　<ion-item>
+  　　　<ion-label>太もも</ion-label>
+　　　　　 <ion-input position="floating" type="text"  name="Thigh3"></ion-input>
+ 　　　　<ion-label>{{height3*0.336 | number:'1.0-0'}}cm</ion-label>
+　　</ion-item>
+　　<ion-item>
+  　　　<ion-label>ふくらはぎ</ion-label>
+ 　　　　<ion-input position="floating" type="text"  name="Calf3"></ion-input>
+ 　　　　<ion-label>{{height3*0.231 | number:'1.0-0'}}cm</ion-label>
+　　</ion-item>
+　　 <ion-item>
+ 　　　 <ion-label>股下</ion-label>
+ 　　　　<ion-input position="floating" type="text"  name="LengthOfTheLeg3"></ion-input>
+ 　　　　<ion-label>{{height3*0.456 | number:'1.0-0'}}cm</ion-label>
+　　</ion-item>
 
 </ion-content>
